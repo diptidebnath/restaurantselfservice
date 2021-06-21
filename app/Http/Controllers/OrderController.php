@@ -7,6 +7,11 @@ use App\Models\Orders;
 
 class OrderController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['listOrders','create', 'store']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -48,7 +53,7 @@ class OrderController extends Controller
             'totalprice' => $request->get('totalprice'),
             'status' => 'Väntande'
         ]);
-        $orderID = $data->ID;
+        
         return view('orders.confirm', compact('data'));
     }
 
@@ -107,5 +112,16 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Display a listing of the resource for public.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function listOrders()
+    {
+        $orders = Orders::latest()->get();
+        return view('orders.list',compact('orders'));
     }
 }

@@ -16,9 +16,7 @@ use App\Http\Controllers\OrderController;
 */
 
 Route::get('/', [PizzaController::class, 'listingPizza']);
-Route::get('/oderconfirm', function () {
-    return view('order-confirm');
-});
+Route::get('listOrders', [OrderController::class, 'listOrders']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -27,6 +25,7 @@ Route::get('/dashboard', function () {
 Route::resource('pizza', PizzaController::class)->middleware('auth');
 Route::resource('order', OrderController::class);
 Route::get('createorder/{id}', [PizzaController::class, 'showProduct']);
+
 
 
 require __DIR__.'/auth.php';
