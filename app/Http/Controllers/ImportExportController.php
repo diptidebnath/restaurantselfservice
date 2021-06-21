@@ -26,7 +26,7 @@ class ImportExportController extends Controller
     public function importFile(Request $request) 
     {
         Excel::import(new PizzaImport, $request->file('file')->store('temp'));
-        return back();
+        return  redirect()->back()->with('message', 'Product Imported');
     }
 
     public function exportFile() 

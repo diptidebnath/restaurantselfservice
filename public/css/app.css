@@ -10002,3 +10002,41 @@ h3 {
     border-color: #dee2e6;
   }
 }
+body{
+  background-image: url('../img/bg.svg');
+  background-position: center center;
+  background-size: cover;
+  
+}
+object#noop {
+  display: none;
+}
+a.navbar-brand img {
+  max-width: 100px;
+}
+nav.navbar.bg-custom {
+  background: rgba(0,0,0,0.6);
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #fff !important;
+}
+.pizza_bg{
+  background: rgba(255, 232, 202, 0.9);
+  border-radius: 5px;
+  
+}
+
+.pizza_card_title{
+  font-family: Handlee;
+font-style: normal;
+font-weight: normal;
+font-size: 80px;
+line-height: 107px;
+/* identical to box height */
+
+
+color: #FFE8CA;
+}
+.font-primary{
+  font-family: Handlee;
+}
