@@ -4,31 +4,26 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                 <h2 class="card-header ">{{ __('Select Pizza') }}</h2>
+                <div class="card">
+                    <div class="card-header ">{{ __('All Orders') }}
+                    </div>
                     @if (Session::has('message'))
                         <div class="alert alert-success">
                             {{ Session::get('message') }}
                         </div>
                     @endif
-                      @if(count($pizzas)>0)
-                        @foreach($pizzas as $key=>$pizza)
-                        <div class="card">
-                   
+                      @if(count($orders)>0)
+                        @foreach($orders as $key=>$order)
                     <div class="card-body">
                       
-                  
-                   {{$pizza->name}}
-                   
-
-                         {{$pizza->description}}
-                          {{$pizza->price}}Sek
-                          <a href="/createorder/{{$pizza->id}}" > <button class="btn btn-secondary float-right">Add</button></a>
-                          </div>
+                        {{$order->id}}
+                         {{$order->products}}
+                         <a href="/order/{{$order->id}}/edit"> <button class="btn btn-primary">{{$order->status}}</button></a>
                           </div>
                           @endforeach
                           @endif
                     
-                
+                </div>
             </div>
         </div>
     </div>

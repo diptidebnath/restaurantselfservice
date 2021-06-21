@@ -17,6 +17,9 @@
 
                             <div class="form-group row">
                                 <label for="productname"> {{ $pizzas->name }} </label>
+                                <input type="hidden" class="form-control  @error('name') is-invalid @enderror" id="productname" name="name" aria-describedby="nameHelp" value="{{ $pizzas->name }}">
+                                  <input type="hidden" class="form-control     @error('productid') is-invalid @enderror" id="productid" name="productid" value="{{ $pizzas->id }} ">
+                                   <input type="hidden" class="form-control     @error('qty') is-invalid @enderror" id="qty" name="qty" value="1">
 
                             </div>
                             <div class="form-group row">
@@ -24,6 +27,7 @@
                             </div>
                             <div class="form-group row">
                                 <label for="totalprice">{{ $pizzas->price }} SEK</label>
+                                   <input type="hidden" class="form-control     @error('totalprice') is-invalid @enderror" id="totalprice" name="totalprice" aria-describedby="PriceHelp" value="{{ $pizzas->price }}">
 
                             </div>
 

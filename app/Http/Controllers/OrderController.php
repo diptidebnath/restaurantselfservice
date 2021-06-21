@@ -14,7 +14,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Orders::latest()->get();
+       return view('orders.index',compact('orders'));
     }
 
     /**
@@ -35,7 +36,20 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'qty' => "required | integer",
+            'productid' => "required | integer",
+            'totalprice' => "required | integer",
+            'name' => "required"   
+        ]);
+      $data =  Orders::create([
+            'qty' => $request->get('qty'),
+            'products' => $request->get('name'),
+            'totalprice' => $request->get('totalprice'),
+            'status' => 'Väntande'
+        ]);
+        $orderID = $data->ID;
+        return view('orders.confirm', compact('data'));
     }
 
     /**
@@ -57,7 +71,9 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order = Orders::find($id);
+        return view('orders.update',compact('order'));
+        
     }
 
     /**
@@ -69,7 +85,17 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'status'=>'required'
+        ]);
+        $order = Orders::find($id);
+        
+        $order->qty = $order->qty;
+        $order->products = $order->products;
+        $order->totalprice = $order->totalprice;
+        $order->status = $request->get('status');
+        $order->save();
+         return redirect('/order')->with('message', 'Order status updated!');
     }
 
     /**

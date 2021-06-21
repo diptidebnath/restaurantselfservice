@@ -36,7 +36,7 @@
   </div>
   <div class="form-group row">
     <label for="exampleInputEmail1">Product Price</label>
-    <input type="number" class="form-control     @error('price') is-invalid @enderror" id="productprice" name="price" aria-describedby="PriceHelp" placeholder="Enter Producr Name">
+    <input type="number" class="form-control     @error('price') is-invalid @enderror" id="productprice" name="price" aria-describedby="PriceHelp" placeholder="Enter Producr Price">
     @error('price')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
