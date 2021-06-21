@@ -1,0 +1,5 @@
+Pizza Bianco,veg,105
+Pizza Napoletana,chicken,100
+Pizza Margherita,seafood,110
+Pizza Tuna,beef,90
+Pizza Funghi,becon,95

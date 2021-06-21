@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PizzaController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ImportExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,10 @@ Route::get('/dashboard', function () {
 Route::resource('pizza', PizzaController::class)->middleware('auth');
 Route::resource('order', OrderController::class);
 Route::get('createorder/{id}', [PizzaController::class, 'showProduct']);
+
+Route::get('import-export', [ImportExportController::class, 'importExport']);
+Route::post('import-file', [ImportExportController::class, 'importFile'])->name('import-file');
+Route::get('export-file', [ImportExportController::class, 'exportFile'])->name('export-file');
 
 
 

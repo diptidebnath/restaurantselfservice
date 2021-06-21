@@ -62,6 +62,9 @@
                                     <a class="nav-link" href="/pizza">{{ __('Products List') }}</a>
                             </li>
                             <li class="nav-item">
+                                    <a class="nav-link" href="/import-export">{{ __('Import/Export Products') }}</a>
+                            </li>
+                            <li class="nav-item">
                                     <a class="nav-link" href="/order">{{ __('Orders List') }}</a>
                             </li>
                             <li class="nav-item dropdown">
