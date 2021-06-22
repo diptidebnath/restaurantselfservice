@@ -20,7 +20,12 @@
             @csrf
             <div class="form-group mb-5" style="max-width: 600px; margin: 0 auto;">
                 <div class="custom-file text-left">
-                    <input type="file" name="file" class="custom-file-input" id="customFile">
+                    <input type="file" name="file" class="custom-file-input form-control @error('file') is-invalid @enderror" id="customFile">
+                    @error('file')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                     <label class="custom-file-label" for="customFile">Browse file</label>
                 </div>
             </div>
