@@ -10,7 +10,7 @@ password: admin123
 Please run
 ```bash
 docker-composer up -d
-php artisan migrate:refresh --seed;
+php artisan migrate:refresh --seed
 php artisan serve
 ```
 
