@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-               <h2 class="card-header pizza_card_title">{{ __('Din beställning?') }}</h2>
+               <h2 class="card-header pizza_card_title">{{ __('Bon appetit!') }}</h2>
                 <div class="card order_custom_card p-4">
                     
                     @if (Session::has('message'))
