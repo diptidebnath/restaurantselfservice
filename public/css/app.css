@@ -10121,3 +10121,6 @@ color: #000000;
   
   color: #000000;
 }
+.card-header {
+ border-bottom:0 !important;
+}
