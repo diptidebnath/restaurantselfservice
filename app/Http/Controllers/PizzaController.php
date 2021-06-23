@@ -71,7 +71,8 @@ class PizzaController extends Controller
      */
     public function edit($id)
     {
-       //
+        $pizza = Pizza::findOrFail($id);
+        return view('pizza.update', compact('pizza'));
     }
 
     /**
@@ -83,7 +84,17 @@ class PizzaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => "required",
+            'description' => "required",
+            'price' => "required | integer"
+        ]);
+        $pizza = Pizza::findOrFail($id);
+        $pizza->name = $request->get('name');
+        $pizza->description = $request->get('description');
+        $pizza->price = $request->get('price');
+        $pizza->save();
+        return redirect()->route('pizza.index')->with('message','Pizza item updated');
     }
 
     /**
@@ -93,8 +104,12 @@ class PizzaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    
     {
-        //
+    
+        $pizza = Pizza::findOrFail($id);
+        $pizza->delete();
+        return redirect()->route('pizza.index')->with('message','Pizza item deleted');
     }
 
     /**

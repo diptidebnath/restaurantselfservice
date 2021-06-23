@@ -4,7 +4,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card bg-custom-secondary p-4">
+               <h2 class="card-header pizza_card_title">{{ __('Din beställning?') }}</h2>
+                <div class="card order_custom_card p-4">
                     
                     @if (Session::has('message'))
                         <div class="alert alert-success">
@@ -13,7 +14,7 @@
                     @endif
                     <div class="card-body">
                       <p class="order_no_text">  Håll utkik efter ditt beställningsnummer:</p>
-                      <div class="card-header">#{{ $data->id }}</div>
+                      <h3 class="order_no">#{{ $data->id }}</h3>
                     </div>
                 </div>
             </div>

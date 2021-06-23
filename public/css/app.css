@@ -10041,3 +10041,83 @@ color: #FFE8CA;
   font-family: Handlee;
 }
 
+
+.order_custom_card{
+  background: rgba(255, 232, 202, 0.9);
+border-radius: 5px;
+}
+.btn-custom{
+
+background: #A6C06E;
+border-radius: 5px;
+}
+.btn-custom-cancel{
+
+background: #C07D6E;
+border-radius: 5px;
+color: #fff;
+}
+.order_no{
+  font-family: Open Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 100px;
+line-height: 136px;
+
+color: #000000;
+
+}
+.card-body.Väntande{
+  background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.33);
+box-sizing: border-box;
+border-radius: 5px;
+}
+
+.btn-custom-status{
+  font-family: Open Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 32px;
+line-height: 44px;
+/* identical to box height */
+text-align: center;
+border-radius: 5px;
+
+}
+.Väntande .btn-custom-status{
+  background: #FDB555;
+
+padding: 15px 20px;
+
+
+color: #000000;
+}
+
+.card-body.Tillagas{
+  background: #FDB555;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+
+.Tillagas .btn-custom-status{
+  background: #A6C06E;
+  padding: 15px 20px;
+color: #000000;
+}
+.card-body.Klar{
+  background:  #A6C06E;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.Klar .btn-custom-status{
+  background: #FDB555;
+
+  padding: 15px 20px;
+  
+  
+  color: #000000;
+}

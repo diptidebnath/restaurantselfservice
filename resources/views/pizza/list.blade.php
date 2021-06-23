@@ -17,11 +17,8 @@
                     <div class="card-body ">
                       
                   
-                  <span class="font-primary"> {{$pizza->name}}</span>
-                   
-
-                         {{$pizza->description}}
-                          {{$pizza->price}}Sek
+                  <span class="font-primary pr-1"> {{$pizza->name}}</span>({{$pizza->description}})
+                         <span class="font-weight-bold pl-2"> {{$pizza->price}} SEK</span>
                           <a href="/createorder/{{$pizza->id}}" class="float-right"> <img src="../../img/pizza-arrow.svg" alt="Add Pizza"></a>
                           </div>
                           </div>
